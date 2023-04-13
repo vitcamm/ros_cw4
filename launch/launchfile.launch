@@ -1,0 +1,10 @@
+<launch>
+    <param name="robot_description" textfile="$(find ros_cw4)/urdf/robot.urdf"/>
+    <rosparam command="load" file="$(find ros_cw4)/conf/config.yaml" />
+    <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /-->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <!--node name="Server" pkg="ros_cw4" type="Server" /-->
+    <!--node name="Client" pkg="ros_cw4" type="Client" /-->    
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_cw4)/urdf.rviz" required="true" />
+</launch>

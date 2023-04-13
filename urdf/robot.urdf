@@ -1,0 +1,194 @@
+<robot name="simil_iiwa">
+    <link name="link_base">
+        <visual>
+            <geometry>
+                <cylinder radius="0.5" length="0.1"/>
+            </geometry>        
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="Arancione">
+                <color rgba="1.0 0.5 0.0 1"/>
+            </material>
+        </visual>
+        
+        <!--collision>
+            <geometry>
+                <cylinder radius="0.5" length="0.15"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>    
+        </collision-->
+    </link>
+    <!-- Giunto 1-->
+    <joint name="j1" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="link_base"/>
+        <child link="l1"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>    
+    <!-- link 1-->
+    <link name="l1">
+        <visual name="l1">
+            <origin xyz="0.0 0.0 0.15" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.07" length="0.3"/>
+            </geometry>
+            <material name="Arancione"/>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.03 0.03 0.3"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!-- Giunto 2-->
+    <joint name="j2" type="revolute">
+        <origin xyz="0.0 0.0 0.3" rpy="0.0 -1.57 0.0"/>
+        <parent link="l1"/>
+        <child link="l2"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 2-->
+    <link name="l2">
+        <visual name="l2">
+            <origin xyz="0.15 0.05 0.0" rpy="0.0 -1.57 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.4"/>
+            </geometry>
+            <material name="Arancione">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!-- Giunto 3-->
+    <joint name="j3" type="revolute">
+        <origin xyz="0.3 0.0 0.0" rpy="0.0  1.57 0.0"/>
+        <parent link="l2"/>
+        <child link="l3"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 3-->
+    <link name="l3">
+        <visual name="l3">
+            <origin xyz="0.0 0.0 0.15" rpy="0.0 1.57 0.0"/>
+            <geometry>
+                <box size="0.4 0.1 0.1"/>
+            </geometry>
+            <material name="Arancione"/>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!-- Giunto 4-->
+    <joint name="j4" type="revolute">
+        <origin xyz="0.0 0.0 0.3" rpy="0.0 -1.57 0.0"/>
+        <parent link="l3"/>
+        <child link="l4"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 4-->
+    <link name="l4">
+        <visual name="l4">
+            <origin xyz="0.15 0.05 0.0" rpy="0.0 -1.57 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.4"/>
+            </geometry>
+            <material name="Arancione">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!-- Giunto 5-->
+    <joint name="j5" type="revolute">
+        <origin xyz="0.3 0.0 0.0" rpy="0.0  1.57 0.0"/>
+        <parent link="l4"/>
+        <child link="l5"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 5-->
+    <link name="l5">
+        <visual name="l5">
+            <origin xyz="0.0 0.0 0.15" rpy="0.0 1.57 0.0"/>
+            <geometry>
+                <box size="0.4 0.1 0.1"/>
+            </geometry>
+            <material name="Arancione"/>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!--Giunto 6-->
+    <joint name="j6" type="revolute">
+        <origin xyz="0.0 0.0 0.3" rpy="0.0 -1.57 0.0"/>
+        <parent link="l5"/>
+        <child link="l6"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 6-->
+    <link name="l6">
+        <visual name="l6">
+            <origin xyz="0.15 0.05 0.0" rpy="0.0 -1.57 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.4"/>
+            </geometry>
+            <material name="Arancione">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+    <!--Giunto 7-->
+    <joint name="j7" type="revolute">
+        <origin xyz="0.3 0.05 0.0" rpy="0.0  1.57 0.0"/>
+        <parent link="l6"/>
+        <child link="l7"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-3.14" upper="3.14" effort="100.0" velocity="1.0"/>
+    </joint>
+    <!-- link 7-->
+    <link name="l7">
+        <visual name="l7">
+            <origin xyz="0.0 0.0 0.05" rpy="0.0 1.57 0.0"/>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <material name=""/>
+        </visual>
+        <!--collision>
+            <origin xyz="0.0 0.0 0.3" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision-->
+    </link>
+</robot>
